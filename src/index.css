@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Cairo', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b131e;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* Custom GIS & Radar Animations */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-sweep-anim {
+  animation: radar-sweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(239, 68, 68, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.pulse-hazard {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Leaflet dark theme tweaks */
+.leaflet-container {
+  background: #0f172a !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #111e2e !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #1e3a5f !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+}
+
+.leaflet-popup-tip {
+  background: #111e2e !important;
+}
+
+.leaflet-control-zoom a {
+  background: #132238 !important;
+  color: #94a3b8 !important;
+  border-color: #1e3a5f !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #1e3a5f !important;
+  color: #38bdf8 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09101a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

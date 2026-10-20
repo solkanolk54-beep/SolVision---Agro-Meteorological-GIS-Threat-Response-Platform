@@ -1,0 +1,6 @@
+{
+  "name": "SolVision - Agro-Meteorological GIS & Threat Response Platform",
+  "description": "منظومة SolVision للاستشعار الزراعي والرصد الجوي: مطابقة مكانية متقدمة لإنذارات ESTOFEX/NWS، محرك مخاطر الانجراف والرياح، أتمتة إيقاف الري IoT، ومقارنة أقمار Sentinel-2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
